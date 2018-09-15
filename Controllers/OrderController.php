@@ -16,11 +16,10 @@ class OrderController extends Controller
 		$this->view->perPage = 10;
 		if (isset($_GET['page'])) {
 			$this->view->page = $_GET['page'];
-			$this->view->pageFirstRecord = ($this->view->page - 1) * $this->view->perPage;
 		} else {
 			$this->view->page = 1;
-			$this->view->pageFirstRecord = ($this->view->page - 1) * $this->view->perPage;
 		}
+		$this->view->pageFirstRecord = ($this->view->page - 1) * $this->view->perPage;
 		// Set SQL parameters
 		if (isset($_GET['orderby']) && isset($_GET['direction'])) {
 			$this->view->orderby = $_GET['orderby'];
