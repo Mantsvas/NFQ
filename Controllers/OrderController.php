@@ -24,45 +24,32 @@ class OrderController extends Controller
 		if (isset($_GET['orderby']) && isset($_GET['direction'])) {
 			$this->view->orderby = $_GET['orderby'];
 			$this->view->direction = $_GET['direction'];
-			$orderby = $_GET['orderby'].' '.$_GET['direction'];
 		} else {
 			$this->view->orderby = 'total_price';
 			$this->view->direction = 'ASC';
-			$orderby = "total_price ASC";
 		}
 		if (!empty($_GET['date1']) && !empty($_GET['date2'])) {
 			$this->view->date1 = $_GET['date1'];
 			$this->view->date2 = $_GET['date2'];
-			$date = "WHERE order_date BETWEEN '".$_GET['date1']."' AND '" .$_GET['date2']."'";
 		} else {
 			$this->view->date1 = '2000-01-01';
 			$this->view->date2 = '2200-01-01';
-			$date = "WHERE order_date > 2000-01-01";
 		}
 		if (!empty($_GET['quantity1']) && !empty($_GET['quantity2'])) {
 			$this->view->quantity1 = $_GET['quantity1'];
 			$this->view->quantity2 = $_GET['quantity2'];
-			$quantity = "AND quantity BETWEEN ".$_GET['quantity1']." AND " .$_GET['quantity2'];
-		} else {
-			$quantity = '';
 		}
 		if (!empty($_GET['status'])) {
 			$this->view->status = $_GET['status'];
-			$status = "AND status = '".$_GET['status']."'";
-		} else {
-			$status = '';
 		}
 		if (!empty($_GET['search'])) {
-			$search = htmlspecialchars($_GET['search']);
-			$this->view->search = $search;
-			$search = "AND (customer_name LIKE '%$search%' OR customer_last_name LIKE '%$search%' OR adress LIKE '%$search%' OR city LIKE '%$search%' )";
-		} else {
-			$search = '';
+			$this->view->search = htmlspecialchars($_GET['search']);
 		}
 		// Connect to DB and get data
-		$sql = "SELECT * FROM orders $date $quantity $status $search ORDER BY $orderby";
+		// $sql = "SELECT * FROM orders $date $quantity $status $search ORDER BY $orderby";
 		$order = new Order;
-		$this->view->orders = $order->select($sql);
+		// $this->view->orders = $order->select($sql);
+		$this->view->orders = $order->selectOrders($_GET);
         $this->view->view('orders/index');
 	}
 

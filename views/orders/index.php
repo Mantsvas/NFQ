@@ -90,10 +90,10 @@
                     <label for="to">Būsena </label>
                 </div>
                 <div class="input-group col-2 mb-4">
-                    <input id="from" class="form-control" class="ml-1" type="number" min="0" name="quantity1">
+                    <input id="from" class="form-control" class="ml-1" type="number" min="0" name="quantity1" value="<?= !empty($this->quantity1) ? $this->quantity1 : '' ?>">
                 </div>
                 <div class="input-group col-2 mb-4">
-                    <input id="to" class="form-control" class="ml-1" type="number" min="0" name="quantity2">
+                    <input id="to" class="form-control" class="ml-1" type="number" min="0" name="quantity2" value="<?= !empty($this->quantity2) ? $this->quantity2 : '' ?>">
                 </div>
                 <div class="input-group col-4 mb-4">
                     <select id="status" class="form-control" name="status">
