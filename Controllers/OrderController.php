@@ -20,7 +20,7 @@ class OrderController extends Controller
 			$this->view->page = 1;
 		}
 		$this->view->pageFirstRecord = ($this->view->page - 1) * $this->view->perPage;
-		// Set SQL parameters
+		// Set Filter parameters
 		if (isset($_GET['orderby']) && isset($_GET['direction'])) {
 			$this->view->orderby = $_GET['orderby'];
 			$this->view->direction = $_GET['direction'];
@@ -45,10 +45,7 @@ class OrderController extends Controller
 		if (!empty($_GET['search'])) {
 			$this->view->search = htmlspecialchars($_GET['search']);
 		}
-		// Connect to DB and get data
-		// $sql = "SELECT * FROM orders $date $quantity $status $search ORDER BY $orderby";
 		$order = new Order;
-		// $this->view->orders = $order->select($sql);
 		$this->view->orders = $order->selectOrders($_GET);
         $this->view->view('orders/index');
 	}
