@@ -5,6 +5,12 @@ require_once 'Models/Model.php';
 
 class Order extends Model
 {
+    /*
+     *  Generates SQL query from $data
+     *
+     * @param array @data is $_GET request passed to function
+     * @return array of data returned from DB that match SQL query
+     */
     public function selectOrders($data)
     {
         if (isset($data['orderby']) && isset($data['direction'])) {

@@ -6,7 +6,7 @@ require_once 'Models/Order.php';
 class OrderController extends Controller
 {
 	/*
-	 * Generates SQL query from $_GET request
+	 * Sets page parameters
 	 *
 	 * @return template file
 	 */
