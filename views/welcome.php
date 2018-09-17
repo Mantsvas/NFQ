@@ -33,36 +33,36 @@ session_start();
         <div class="col-12 col-md-6 input-group px-5">
             <label>
                 Vardas
-                <input class="form-control" type="text" name="customer_name" value="<?= isset($_SESSION['customer_name']) ? $_SESSION['customer_name'] : ''; unset($_SESSION['customer_name'])?>">
+                <input class="form-control" type="text" name="customer_name" value="<?= isset($_SESSION['customer_name']) ? $_SESSION['customer_name'] : ''; unset($_SESSION['customer_name'])?>" required>
             </label>
         </div>
         <div class="col-12 col-md-6 input-group px-5">
             <label>
                 Pavarde
-                <input class="form-control" type="text" name="customer_last_name" value="<?= isset($_SESSION['customer_last_name']) ? $_SESSION['customer_last_name'] : ''; unset($_SESSION['customer_last_name']); ?>">
+                <input class="form-control" type="text" name="customer_last_name" value="<?= isset($_SESSION['customer_last_name']) ? $_SESSION['customer_last_name'] : ''; unset($_SESSION['customer_last_name']); ?>" required>
             </label>
         </div>
         <div class="col-4 col-md-3 col-lg-2 input-group px-5">
             <label>Kiekis
-                <input class="form-control" type="number" name="quantity" value="<?= isset($_SESSION['quantity']) ? $_SESSION['quantity'] : ''; unset($_SESSION['quantity']); ?>">
+                <input class="form-control" type="number" name="quantity" value="<?= isset($_SESSION['quantity']) ? $_SESSION['quantity'] : ''; unset($_SESSION['quantity']); ?>" required>
             </label>
         </div>
         <div class="col-12 col-md-6 offset-md-3 offset-lg-4 input-group px-5">
             <label>
                 El. Paštas
-                <input class="form-control" type="text" name="customer_email" value="<?= isset($_SESSION['customer_email']) ? $_SESSION['customer_email'] : ''; unset($_SESSION['customer_email']); ?>">
+                <input class="form-control" type="text" name="customer_email" value="<?= isset($_SESSION['customer_email']) ? $_SESSION['customer_email'] : ''; unset($_SESSION['customer_email']); ?>" required>
             </label>
         </div>
         <div class="col-12 col-md-6 input-group px-5">
             <label>
                 Adresas
-                <input class="form-control" type="text" name="adress" value="<?= isset($_SESSION['adress']) ? $_SESSION['adress'] : ''; unset($_SESSION['adress']); ?>">
+                <input class="form-control" type="text" name="adress" value="<?= isset($_SESSION['adress']) ? $_SESSION['adress'] : ''; unset($_SESSION['adress']); ?>" required>
             </label>
         </div>
         <div class="col-12 col-md-6 input-group px-5">
             <label>
                 Miestas
-                <input class="form-control" type="text" name="city" value="<?= isset($_SESSION['city']) ? $_SESSION['city'] : ''; unset($_SESSION['city']); ?>">
+                <input class="form-control" type="text" name="city" value="<?= isset($_SESSION['city']) ? $_SESSION['city'] : ''; unset($_SESSION['city']); ?>" required>
             </label>
         </div>
         <div class="col-12 text-center">

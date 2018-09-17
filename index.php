@@ -1,4 +1,4 @@
 <?php
-require 'Kernel/App.php';
+require 'libs/App.php';
 
 new App();
